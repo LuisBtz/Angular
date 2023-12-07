@@ -16,6 +16,11 @@ export default {
             type: 'text'
         },
         {
+            name: 'angularIcon',
+            title: 'Angular Icon',
+            type: 'imageType'
+        },
+        {
             name: 'copyright',
             title: 'Copyright',
             type: 'string'

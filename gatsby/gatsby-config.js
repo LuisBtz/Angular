@@ -4,7 +4,11 @@
 module.exports = {
   siteMetadata: {
     title: `Angular`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://angular.com/`,
+    description: `Angular website`,
+    twitterUsername: `@angular.projects`,
+    image: `/screenshot.png`,
+    author: `angular`
   },
   plugins: [{
     resolve: 'gatsby-source-sanity',
@@ -15,13 +19,13 @@ module.exports = {
   }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-styled-components", "gatsby-plugin-sitemap", {
     resolve: 'gatsby-plugin-manifest',
     options: {
-      "icon": "src/images/icon.png"
+      "icon": "src/assets/images/icon.png"
     }
   }, {
     resolve: 'gatsby-source-filesystem',
     options: {
       "name": "images",
-      "path": "./src/images/"
+      "path": "./src/assets/images/"
     },
     __key: "images"
   }]
