@@ -17,7 +17,6 @@ function Layout({ children  }) {
       <Normalizer />
       <Typography />
       <Header />
-      <Footer />
       <Grid>
         <div className="first"></div>
         <div></div>
@@ -28,6 +27,8 @@ function Layout({ children  }) {
         <div className="last"></div>
       </Grid>
       <main >{children}</main>
+      <Footer />
+
     </>
   )
 }

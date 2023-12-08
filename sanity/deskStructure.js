@@ -1,10 +1,13 @@
 // deskStructure.js
+import {orderableDocumentListDeskItem} from '@sanity/orderable-document-list'
 
 
-export default (S) =>
+export default (S, context) =>
   S.list()
     .title('General')
     .items([
+      orderableDocumentListDeskItem({type: 'projectPage', S, context}),
+
         S.listItem()
           .title('Global Page')
           .icon(() => '⚙️')

@@ -50,7 +50,7 @@ const Footer = () => {
                 <div className='de'>
                     <div className='le'>
                         <ul>
-                            <li><Link to="/work" >Woek</Link></li>
+                            <li><Link to="/work" >Work</Link></li>
                             <li><Link to="/insights" >Insights</Link></li>
                             <li><Link to="/about" >About</Link></li>
                         </ul>

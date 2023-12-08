@@ -1,10 +1,19 @@
+import {
+    orderRankField,
+    orderRankOrdering,
+  } from '@sanity/orderable-document-list';
+
+  
+
 export default {
     //
     name: 'projectPage',
     title: 'Projects',
     type: 'document',
     icon: () => '📝',
+    orderings: [orderRankOrdering],
     fields: [
+        orderRankField({ type: 'architecture', hidden: true }),
         {
             name: 'title',
             title: ' Site Title',

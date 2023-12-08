@@ -13,8 +13,10 @@ module.exports = {
   plugins: [{
     resolve: 'gatsby-source-sanity',
     options: {
-      "projectId": "mqltihbr",
-      "dataset": "production"
+      projectId: "mqltihbr",
+      dataset: "production",
+      watchMode: true,
+      overlayDrafts: true, 
     }
   }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-styled-components", "gatsby-plugin-sitemap", {
     resolve: 'gatsby-plugin-manifest',

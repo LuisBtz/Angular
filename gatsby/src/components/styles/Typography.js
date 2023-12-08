@@ -84,5 +84,14 @@ html {
         font-family: var(--slim);
         font-weight: lighter;
     }
+
+    h1 {
+        font-size: 6rem;
+        font-family: var(--light);
+    }
+    h2 {
+        font-size: 6rem;
+        font-family: var(--light);
+    }
     
 `
