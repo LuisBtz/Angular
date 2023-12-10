@@ -8,6 +8,7 @@ import FeaturedItem from "../components/Home/FeaturedItem";
 import LastItem from "../components/Home/LastItem";
 import ProjectsList from "../components/Home/ProjectsList";
 import TextHero from "../components/Home/TextHero";
+import Insights from "../components/Home/Insights";
 
 
 export const data = graphql`
@@ -31,6 +32,35 @@ export const data = graphql`
           current
         }
         
+      }
+    }
+    allSanityBlogPage {
+      nodes {
+        title
+        category {
+          title
+          slug {
+            current
+          }
+        }
+        author {
+          title
+        }
+        date
+        _rawDescription
+        featuredImage {
+          alt
+          asset {
+            gatsbyImageData(
+              layout: FULL_WIDTH
+              outputPixelDensities: 1.5
+              placeholder: DOMINANT_COLOR
+            )
+          }
+        }
+        slug {
+          current
+        }
       }
     }
     sanityHomePage {
@@ -59,6 +89,7 @@ const IndexPage = ({data}) => {
             <LastItem projects={data.allSanityProjectPage} />
             <ProjectsList projects={data.allSanityProjectPage} />
             <TextHero description={data.sanityHomePage.description} />
+            <Insights blog={data.allSanityBlogPage} />
         </Contenedor>
         
     </Layout>

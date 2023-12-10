@@ -7,6 +7,7 @@ export default (S, context) =>
     .title('General')
     .items([
       orderableDocumentListDeskItem({type: 'projectPage', S, context}),
+      orderableDocumentListDeskItem({type: 'blogPage', S, context}),
 
         S.listItem()
           .title('Global Page')

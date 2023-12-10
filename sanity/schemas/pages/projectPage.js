@@ -4,7 +4,6 @@ import {
   } from '@sanity/orderable-document-list';
 
   
-
 export default {
     //
     name: 'projectPage',
