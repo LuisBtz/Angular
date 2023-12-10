@@ -12,7 +12,7 @@ const FirstItem = ({projects}) => {
                   const iconGetDataImageAlt = project.featuredImage && project.featuredImage.alt
                 
                   return (
-                      <div className='firstItem'>
+                      <div className='firstItem' key={project._id}>
                         <Link to={`work/${project.slug.current}`}>
                             <div className="image">
                                 <GatsbyImage

@@ -61,7 +61,7 @@ const Footer = () => {
                                     
                                 return (
                                     <li 
-                                        kay={item._key} 
+                                        key={item._key} 
                                         className='link'
                                     >
                                         <a href={item.url}>{item.name}</a>

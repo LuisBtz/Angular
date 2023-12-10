@@ -16,7 +16,7 @@ const FeaturedItem = ({projects}) => {
                   const iconGetDataImageAlt = project.featuredImage && project.featuredImage.alt
                 
                   return (
-                      <div className='firstItem'>
+                      <div className='firstItem' key={project._id}>
                         <Link to={`work/${project.slug.current}`}>
                             <div className='texto'>
                                 <p className='title'><span>></span>{project.title}</p>
@@ -72,9 +72,7 @@ color: var(--gray);
     }
 .firstItem {
     position: relative;
-    .image {
-        height: 600px;
-    }
+    
     .texto {
         z-index: 1;
         max-width: var(--container);

@@ -86,11 +86,18 @@ html {
     }
 
     h1 {
-        font-size: 6rem;
+        font-size: 4rem;
         font-family: var(--light);
     }
     h2 {
-        font-size: 6rem;
+        font-size: 4rem;
+        font-family: var(--light);
+        @media (max-width: 750px) {
+            font-size: 3rem;
+
+            }
+    }
+    h3 {
         font-family: var(--light);
     }
     

@@ -6,11 +6,13 @@ import FirstItem from "../components/Home/FirstItem";
 import { graphql } from "gatsby";
 import FeaturedItem from "../components/Home/FeaturedItem";
 import LastItem from "../components/Home/LastItem";
+import ProjectsList from "../components/Home/ProjectsList";
+import TextHero from "../components/Home/TextHero";
 
 
 export const data = graphql`
   query {
-    allSanityProjectPage {
+    allSanityProjectPage(sort: {orderRank: ASC}) {
       nodes {
         title
         _id
@@ -32,6 +34,7 @@ export const data = graphql`
       }
     }
     sanityHomePage {
+      description
       seo {
         title
         description
@@ -54,6 +57,8 @@ const IndexPage = ({data}) => {
             <FirstItem projects={data.allSanityProjectPage} />
             <FeaturedItem projects={data.allSanityProjectPage} />
             <LastItem projects={data.allSanityProjectPage} />
+            <ProjectsList projects={data.allSanityProjectPage} />
+            <TextHero description={data.sanityHomePage.description} />
         </Contenedor>
         
     </Layout>
