@@ -88,6 +88,10 @@ html {
     h1 {
         font-size: 4rem;
         font-family: var(--light);
+        @media (max-width: 750px) {
+            font-size: 3rem;
+
+            }
     }
     h2 {
         font-size: 4rem;

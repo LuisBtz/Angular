@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { graphql, useStaticQuery } from "gatsby";
+import { Link, graphql, useStaticQuery } from "gatsby";
 
 
 
@@ -12,6 +12,17 @@ const Header = () => {
                 logoSVGCode
                 copyright
                 tagline
+                angularIcon {
+                alt
+                asset {
+                    url
+                }
+            }
+                socialMediaLinks {
+                    _key
+                    name
+                    url
+                }
             }
         }
 
@@ -33,6 +44,35 @@ const Header = () => {
                 <p>{data.sanityGlobalPage.copyright}</p>
                 </div>
             </div>
+            <nav>
+                <div className='container'>
+                    <ul className='pages'>
+                        <li>
+                            <Link to='/'><img src={data.sanityGlobalPage.angularIcon.asset.url} /></Link>
+                        </li>
+                        <li><Link to='/work'>Work</Link></li>
+                        <li><Link to='/about'>About</Link></li>
+                        <li><Link to='/insights'>Insights</Link></li>
+                    </ul>
+                    <ul className='social'>
+                        {data.sanityGlobalPage.socialMediaLinks.map((item) => {                    
+                                
+                            return (
+                                <li 
+                                    key={item._key} 
+                                    className='link'
+                                >
+                                    <a href={item.url}>{item.name}</a>
+                                </li> 
+                            )
+                        })}
+                    </ul>
+                    <ul className='policy'>
+                        <li><Link to='/'>Privacy Policy</Link></li>
+                        <li>Design & Developed By Nevada Projects </li>
+                    </ul>
+                </div>
+            </nav>
         </HeaderContainer>
     )
 }
@@ -65,6 +105,47 @@ const HeaderContainer = styled.header`
         svg {
             width: 100%;
             height: auto;
+        }
+    }
+    nav {
+        position: fixed;
+        z-index: 5;
+        bottom: 0px;
+        width: 100%;
+        left: 0;
+        background-color: #3A4044;
+        color: var(--white);
+        .container {
+            width: 100%;
+            max-width: var(--container);
+            margin: 0 auto;
+            display: flex;
+            padding: 10px;
+            justify-content: space-between;
+            @media (max-width: 750px) {
+                flex-direction: column;
+            }
+            ul {
+                display: flex;
+                @media (max-width: 750px) {
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                }
+                li {
+                    margin-right: 20px;
+                    img {
+                        width: 40px;
+                    }
+                }
+            }
+            .policy {
+                flex-direction: column;
+                li {
+                    &:last-child {
+                        color: black
+                    }
+                }
+            }
         }
     }
 `

@@ -34,8 +34,9 @@ export const data = graphql`
         
       }
     }
-    allSanityBlogPage {
+    allSanityBlogPage(sort: {orderRank: ASC}) {
       nodes {
+        _id
         title
         category {
           title
@@ -58,9 +59,7 @@ export const data = graphql`
             )
           }
         }
-        slug {
-          current
-        }
+        link
       }
     }
     sanityHomePage {

@@ -81,7 +81,7 @@ const FooterContainer = styled.footer`
     .container {
         max-width: var(--container);
         margin: 0 auto;
-        padding: 50px 20px;
+        padding: 50px 20px 100px;
         color: var(--white);
         display: grid;
         grid-template-columns: repeat(5, 1fr);
