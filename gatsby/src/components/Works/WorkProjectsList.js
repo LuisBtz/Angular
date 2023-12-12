@@ -1,9 +1,17 @@
 import { Link } from 'gatsby';
-import React from 'react';
+import React, { useState } from "react"
 import styled from 'styled-components';
 import WorkItemList from './WorkItemList';
+import WorkItemGridList from './WorkItemGridList';
 
 const WorkProjectsList = ({categories, projects}) => {
+
+
+    const [list, setList] = useState(true);
+    const [grid, setGrid] = useState(false);
+
+
+
     return(
         <WorkProjectsListContainer id='projectList'>
             <div className='container'>
@@ -21,19 +29,31 @@ const WorkProjectsList = ({categories, projects}) => {
                         })}
                     </ul>
                     <ul className='buttons'>
-                        <li><button className='active'><span>></span>List View</button></li>
-                        <li><button><span>></span>Grid View</button></li>
+                        <li><button onClick={() => (setGrid(false), setList(true))}  className={list ? 'active' : ''}><span>></span>List View</button></li>
+                        <li><button onClick={() => (setGrid(true), setList(false))}  className={grid ? 'active' : ''}><span>></span>Grid View</button></li>
                     </ul>
                 </div>
                 <div className='projectsList'>
-                    <ul className='list'>
-                    {projects.nodes.map((project) => {
-                
-                  return (
-                    <WorkItemList project={project} />
-                  )
-                })}
-                    </ul>
+                    {
+                        list ?
+                            <ul className='list'>
+                                    {projects.nodes.map((project) => {
+                                
+                                return (
+                                    <WorkItemList project={project} />
+                                )
+                                })}
+                            </ul>
+                            :
+                            <ul className='grid'>
+                                {projects.nodes.map((project) => {
+                                    return (
+                                        <WorkItemGridList project={project} />
+                                    )
+                                })}
+                            </ul>
+                    }
+                    
                     
                 </div>
             </div>
@@ -56,6 +76,10 @@ const WorkProjectsListContainer = styled.section`
             padding-top: 20px;
             padding-bottom: 0px;
             border-bottom: solid 1px var(--gray);
+            @media (max-width: 650px) {
+                grid-template-columns: 3fr 2fr;
+                grid-gap: 0px;
+            }
             ul.list {
                 display: inline;
                 .first {
@@ -96,7 +120,16 @@ const WorkProjectsListContainer = styled.section`
         .projectsList {
             padding: 50px 0;
             position: relative;
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                grid-gap:45px;
+                @media (max-width: 750px) {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
         }
+
     }
 `
 

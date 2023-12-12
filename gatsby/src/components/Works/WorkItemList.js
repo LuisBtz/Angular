@@ -43,6 +43,10 @@ const WorkItemListContainer = styled.li`
         display: grid;
         grid-template-columns: 3fr 2fr;
         grid-gap: 40px;
+        @media (max-width: 900px) {
+            grid-template-columns: 1fr;
+            grid-gap: 10px;
+        }
         .item {
             display: flex;
             justify-content: space-between;
@@ -57,6 +61,9 @@ const WorkItemListContainer = styled.li`
                 }
             }
             .de {
+                @media (max-width: 560px) {
+                    display: none;
+                }
                 p {
                     display: inline-block;
                 }
@@ -83,6 +90,9 @@ const WorkItemListContainer = styled.li`
             display: block;
             width: calc(40% - 20px);
             height: 400px;
+            @media (max-width: 900px) {
+                display: none;
+            }
             img {
                 object-fit: cover;
                 object-position: bottom;
