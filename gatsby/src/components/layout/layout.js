@@ -8,7 +8,7 @@ import styled from "styled-components";
 
 
 
-function Layout({ children  }) {
+function Layout({ children, gray  }) {
 
 
 
@@ -16,7 +16,7 @@ function Layout({ children  }) {
     <>
       <Normalizer />
       <Typography />
-      <Header />
+      <Header gray={gray} />
       <Grid>
         <div className="first"></div>
         <div></div>
