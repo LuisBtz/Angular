@@ -86,6 +86,6 @@ export const query = graphql`
 `
 
 export const Head = ({data: { category, projects } }) => (
-    <Seo title={`Angualar | ${category.title} Category`} description={`Angular category page for: ${category.title}`}  image={projects.nodes[0].featuredImage.asset.url} />
+    <Seo title={`Angualar | ${category.title} Category`} description={`Angular category page for: ${category.title}`}  image={projects.nodes[0] && projects.nodes[0].featuredImage.asset.url} />
     )
   

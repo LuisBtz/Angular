@@ -3,6 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Layout from '../components/layout/layout'
 import { Seo } from '../components/layout/seo';
+import HeroProjectTemplate from '../components/TemplateComponents/Project/HeroProjectTemplate';
 
 
 export default function SingleProjectPage({data: { project} }) {
@@ -16,7 +17,7 @@ export default function SingleProjectPage({data: { project} }) {
     return (
         <Layout gray={gray}>
             <CategoriaContainer>
-                <h1>{project.title}</h1>
+                <HeroProjectTemplate project={project} />
             </CategoriaContainer>
         </Layout>
     )
@@ -57,7 +58,8 @@ export const query = graphql`
             }
             _rawDescription
             date
-            _rawRelatedContent
+            _rawRelatedTopics
+
             content {
                 ... on SanityImageType {
                     _key
@@ -75,6 +77,24 @@ export const query = graphql`
                     _key
                     _type
                     _rawText
+                }
+            }
+            relatedContent {
+                _id
+                title
+                slug {
+                    current
+                }
+                tagline
+                featuredImage {
+                    alt
+                    asset {
+                    gatsbyImageData(
+                        layout: FULL_WIDTH
+                        outputPixelDensities: 1.5
+                        placeholder: DOMINANT_COLOR
+                    )
+                    }
                 }
             }
         }
