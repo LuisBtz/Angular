@@ -47,6 +47,11 @@ export default {
             type: 'blockModule'
         },
         {
+            name: 'relatedTopics',
+            title: 'Related Topics',
+            type: 'blockModule'
+        },
+        {
             name: 'date',
             title: 'Date',
             type: 'string'

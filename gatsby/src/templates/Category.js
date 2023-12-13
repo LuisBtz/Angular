@@ -57,6 +57,7 @@ export const query = graphql`
             featuredImage {
             alt
             asset {
+                url
                 gatsbyImageData(
                 layout: FULL_WIDTH
                 outputPixelDensities: 1.5
@@ -84,7 +85,7 @@ export const query = graphql`
     }
 `
 
-export const Head = () => (
-    <Seo title='Nevada Projects | Category' description='Estudio de Diseño & Arte' image='/screenshot.png' />
+export const Head = ({data: { category, projects } }) => (
+    <Seo title={`Angualar | ${category.title} Category`} description={`Angular category page for: ${category.title}`}  image={projects.nodes[0].featuredImage.asset.url} />
     )
   
