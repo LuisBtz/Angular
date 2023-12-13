@@ -1,16 +1,17 @@
 import { Link } from 'gatsby';
 import React, { useState } from "react"
 import styled from 'styled-components';
-import WorkItemList from './WorkItemList';
-import WorkItemGridList from './WorkItemGridList';
+import TemplateItemList from './TemplateItemList';
+import TemplateItemGridList from './TemplateItemGridList';
 
-const WorkProjectsList = ({categories, projects}) => {
+const TemplateProjectsList = ({categories, projects, category}) => {
 
 
     const [list, setList] = useState(true);
     const [grid, setGrid] = useState(false);
 
 
+    const categorySlug = category.slug.current;
 
     return(
         <WorkProjectsListContainer id='projectList'>
@@ -19,8 +20,9 @@ const WorkProjectsList = ({categories, projects}) => {
                     <ul className='list'>
                         <li className='first'><Link to='/work'><span>></span>See All</Link></li>
                         {categories.nodes.map((category) => {
+
                             return (
-                                <li className='item' key={category._id}>
+                                <li className={categorySlug == category.slug.current ? 'item active' : 'item'} key={category._id}>
                                     <Link to={`/category/${category.slug.current}`}>
                                         {category.title}
                                     </Link>
@@ -40,7 +42,7 @@ const WorkProjectsList = ({categories, projects}) => {
                                     {projects.nodes.map((project) => {
                                 
                                 return (
-                                    <WorkItemList project={project} />
+                                    <TemplateItemList project={project} />
                                 )
                                 })}
                             </ul>
@@ -48,7 +50,7 @@ const WorkProjectsList = ({categories, projects}) => {
                             <ul className='grid'>
                                 {projects.nodes.map((project) => {
                                     return (
-                                        <WorkItemGridList project={project} />
+                                        <TemplateItemGridList project={project} />
                                     )
                                 })}
                             </ul>
@@ -82,9 +84,10 @@ const WorkProjectsListContainer = styled.section`
             }
             ul.list {
                 display: inline;
-                .first {
+                
+                .item.active {
                     background-color: var(--gray);
-                    color: white;
+                    color: var(--white);
                 }
                 li {
                     color: var(--gray);
@@ -139,4 +142,4 @@ const WorkProjectsListContainer = styled.section`
     }
 `
 
-export default WorkProjectsList
+export default TemplateProjectsList
