@@ -56,15 +56,25 @@ const HeroProjectTemplateContainer = styled.section`
         max-width: var(--container);
         margin: 0 auto;
         padding: 50px 20px;
+        @media(max-width: 680px) {
+            padding: 20px;
+        }
         .top {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             grid-gap: 40px;
+            @media(max-width: 680px) {
+                grid-template-columns: 1fr;
+                grid-gap: 10px;
+            }
             h1 {
                 font-size: 0.8rem;
                 font-family: var(--regular);
             }.category {
                 grid-column: 3/4;
+                @media(max-width: 680px) {
+                    grid-column: auto;
+                }
                 p {
                     background-color: var(--green);
                     display: inline-block;
@@ -76,6 +86,9 @@ const HeroProjectTemplateContainer = styled.section`
             }
             .date {
                 grid-column: 4/5;
+                @media(max-width: 680px) {
+                    grid-column: auto;
+                }
             }
         }
         .main {
@@ -84,11 +97,21 @@ const HeroProjectTemplateContainer = styled.section`
             grid-gap: 40px;
             margin-top: 20px;
             align-items: flex-end;
+            @media(max-width: 680px) {
+                grid-template-columns: 1fr;
+                grid-gap: 20px;
+            }
             h2 {
                 grid-column: 1/3;
+                @media(max-width: 680px) {
+                    grid-column: auto;
+                }
             }
             .description {
                 grid-column: 3/5;
+                @media(max-width: 680px) {
+                    grid-column: auto;
+                }
                 button {
                     color: var(--gray);
                     cursor: auto;

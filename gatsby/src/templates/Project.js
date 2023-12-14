@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import Layout from '../components/layout/layout'
 import { Seo } from '../components/layout/seo';
 import HeroProjectTemplate from '../components/TemplateComponents/Project/HeroProjectTemplate';
+import ModulosTemplateProject from '../components/TemplateComponents/Project/ModulosTemplateProject';
 
 
 export default function SingleProjectPage({data: { project} }) {
@@ -18,6 +19,7 @@ export default function SingleProjectPage({data: { project} }) {
         <Layout gray={gray}>
             <CategoriaContainer>
                 <HeroProjectTemplate project={project} />
+                <ModulosTemplateProject content={project.content} />
             </CategoriaContainer>
         </Layout>
     )
