@@ -5,6 +5,7 @@ import Layout from '../components/layout/layout'
 import { Seo } from '../components/layout/seo';
 import HeroProjectTemplate from '../components/TemplateComponents/Project/HeroProjectTemplate';
 import ModulosTemplateProject from '../components/TemplateComponents/Project/ModulosTemplateProject';
+import RelatedProjectsTemplate from '../components/TemplateComponents/Project/RelatedProjectsTemplate';
 
 
 export default function SingleProjectPage({data: { project} }) {
@@ -20,6 +21,7 @@ export default function SingleProjectPage({data: { project} }) {
             <CategoriaContainer>
                 <HeroProjectTemplate project={project} />
                 <ModulosTemplateProject content={project.content} />
+                <RelatedProjectsTemplate project={project} />
             </CategoriaContainer>
         </Layout>
     )
