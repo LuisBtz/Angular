@@ -5,6 +5,8 @@ import { Seo } from '../components/layout/seo';
 import { graphql } from "gatsby";
 import AboutHero from "../components/About/AboutHero";
 import OurServices from "../components/About/OurServices";
+import OurApproach from "../components/About/OurApproach";
+import TheTeam from "../components/About/TheTeam";
 
 export const data = graphql`
   query {
@@ -38,6 +40,7 @@ export const data = graphql`
       _key
       title
       position
+      empty
       image {
         alt
         asset {
@@ -75,6 +78,8 @@ const WorkPage = ({data}) => {
         <Contenedor id='main' >
           <AboutHero about={data.sanityAboutPage} />
           <OurServices about={data.sanityAboutPage} />
+          <OurApproach about={data.sanityAboutPage} />
+          <TheTeam  about={data.sanityAboutPage} />
         </Contenedor>
         
     </Layout>

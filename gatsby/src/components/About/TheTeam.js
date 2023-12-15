@@ -1,40 +1,46 @@
-import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-const OurServices = ({about}) => {
+const TheTeam = ({about}) => {
     return(
-        <OurServicesContainer>
+        <TheTeamContainer>
             <div className='container'>
                 <div className='top'>
-                    <h2>Our Services</h2>
-                    <Link to='/work'><span>></span>See All Work</Link>
+                    <h2>The Team</h2>
                 </div>
+                <p className='desc'>{about.teamDescription}</p>
                 <ul className='services'>
-                    {about.services.map((service) => {
+                    {about.team.map((member) => {
+                        const iconGetDataImage = getImage(member.image && member.image.asset)
+                        const iconGetDataImageAlt = member.image && member.image.alt                        
                         return (
-                            <li className={`${service.empty} item`} key={service._kay}>
+                            <li className={`${member.empty} item`} key={member._kay}>
                                 <div className='esquinas'>
                                     <div></div>
                                     <div></div>
                                     <div></div>
                                     <div></div>
                                 </div>
-                                <h3>{service.title}</h3>
-                                <p>{service.description}</p>
+                                <GatsbyImage
+                                    image={iconGetDataImage}
+                                    alt={iconGetDataImageAlt}
+                                />
+                                <div className='text'>
+                                    <h3>{member.empty === true ? '' : <span>></span>}{member.title}</h3>
+                                    <p>{member.position}</p>
+
+                                </div>
                             </li>
                         )
                     })}
                 </ul>
-                <div className='texto'>
-                    <h2>{about.ourServicesDescription}</h2>
-                </div>
             </div>
-        </OurServicesContainer>
+        </TheTeamContainer>
     )
 }
 
-const OurServicesContainer = styled.section`
+const TheTeamContainer = styled.section`
     .container {
         width: 100%;
         max-width: var(--container);
@@ -50,6 +56,13 @@ const OurServicesContainer = styled.section`
                 @media (max-width: 650px){
                     font-size: 1.8rem;
                 }
+            }
+        }
+        .desc {
+            padding: 50px 0 0;
+            width: 40%;
+            @media (max-width: 650px){
+                width: 80%;
             }
         }
         .top {
@@ -77,9 +90,11 @@ const OurServicesContainer = styled.section`
         }
         ul.services {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(5, 1fr);
             grid-gap: 40px;
             margin-top: 50px;
+            border-bottom: solid 1px var(--white);
+            padding-bottom: 80px;
             @media (max-width: 850px){
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -87,15 +102,22 @@ const OurServicesContainer = styled.section`
                 grid-template-columns: repeat(1, 1fr);
             }
             li {
-                padding: 20px;
+                padding: 10px;
                 position: relative;
                 h3 {
                     font-family: var(--regular);
-                    font-size: 1.5rem;
-                    margin-bottom: 100px;
+                    font-size: 0.85rem;
+                    margin-top: 15px;
+                    span {
+                        margin-right: 10px;
+                    }
                     @media (max-width: 940px){
                         font-size: 1rem;
                     }
+                }
+                p {
+                    margin-left: 20px;
+                    color: var(--black);
                 }
                 .esquinas {
                     position: absolute;
@@ -140,6 +162,7 @@ const OurServicesContainer = styled.section`
             
         }
     }
+
 `
 
-export default OurServices
+export default TheTeam

@@ -54,7 +54,7 @@ const Header = ({gray, white}) => {
                         </li>
                         <li><Link to='/work'>Work</Link></li>
                         <li><Link to='/about'>About</Link></li>
-                        <li><Link to='/insights'>Insights</Link></li>
+                        <li><Link to='/'>Insights</Link></li>
                     </ul>
                     <ul className='social'>
                         {data.sanityGlobalPage.socialMediaLinks.map((item) => {                    
