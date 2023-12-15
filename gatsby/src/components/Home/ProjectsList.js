@@ -5,8 +5,6 @@ import { Link } from 'gatsby';
 
 const ProjectsList = ({projects}) => {
 
-    let arrayMinus = projects.nodes.splice(0, 3)
-
 
 
     return (
