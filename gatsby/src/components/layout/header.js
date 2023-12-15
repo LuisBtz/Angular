@@ -4,7 +4,7 @@ import { Link, graphql, useStaticQuery } from "gatsby";
 
 
 
-const Header = ({gray}) => {
+const Header = ({gray, white}) => {
 
     const data = useStaticQuery(graphql`
         query {
@@ -34,11 +34,11 @@ const Header = ({gray}) => {
         <HeaderContainer>
             <Link to='/'>
                 <div
-                    className={gray === true ? 'logo gray' : 'logo'}
+                    className={gray === true ? 'logo gray' : white === true ? 'logo white' : 'logo'}
                     dangerouslySetInnerHTML={{__html: data.sanityGlobalPage.logoSVGCode}}
                 />
             </Link>
-            <div className='text'>
+            <div className={white ? 'text white' : 'text'}>
                 <div className='iz'>
                     <p>{data.sanityGlobalPage.tagline}</p>
                 </div>
@@ -102,9 +102,17 @@ const HeaderContainer = styled.header`
                 width: 165px;
             }
         }
+        .text.white {
+            color: var(--white) !important;
+        }
     .logo.gray {
         path {
             fill: #A5ACB7 !important;
+        }
+    }
+    .logo.white {
+        path {
+            fill: #ffffff !important;
         }
     }
     .logo {
