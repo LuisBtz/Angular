@@ -4,6 +4,7 @@ import Layout from '../components/layout/layout'
 import { Seo } from '../components/layout/seo';
 import { graphql } from "gatsby";
 import AboutHero from "../components/About/AboutHero";
+import OurServices from "../components/About/OurServices";
 
 export const data = graphql`
   query {
@@ -73,6 +74,7 @@ const WorkPage = ({data}) => {
     <Layout white={white}>
         <Contenedor id='main' >
           <AboutHero about={data.sanityAboutPage} />
+          <OurServices about={data.sanityAboutPage} />
         </Contenedor>
         
     </Layout>

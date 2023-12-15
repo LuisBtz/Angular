@@ -41,6 +41,12 @@ const Cont = styled.div`
   .white {
     background-color: var(--gray);
   }
+  .logo.white {
+    background-color: inherit;
+  }
+  .text.white {
+    background-color: inherit;
+  }
 `
 
 const Grid = styled.div`
