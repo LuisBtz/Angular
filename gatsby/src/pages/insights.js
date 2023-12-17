@@ -6,6 +6,7 @@ import { graphql } from "gatsby";
 import HeroBlog from "../components/Blog/HeroBlog";
 import Hero2Blog from "../components/Blog/Hero2Blog";
 import BlogProjectsList from "../components/Blog/BlogProjectsList";
+import BlogListWork from "../components/Blog/BlogListWork";
 
 export const data = graphql`
   query {
@@ -39,6 +40,33 @@ export const data = graphql`
     }
   }
 
+  allSanityProjectPage(sort: {orderRank: ASC}, limit: 4) {
+      nodes {
+        title
+        _id
+        tagline
+        categories {
+          _id
+          title
+        }
+        date
+        featuredImage {
+          alt
+          asset {
+            gatsbyImageData(
+              layout: FULL_WIDTH
+              outputPixelDensities: 1.5
+              placeholder: DOMINANT_COLOR
+            )
+          }
+        }
+        slug {
+          current
+        }
+        
+      }
+    }
+
   allSanityBlogCategories {
     nodes {
       title
@@ -64,6 +92,7 @@ const WorkPage = ({data}) => {
             <HeroBlog blog={data.allSanityBlogPage}  />
             <Hero2Blog blog={data.allSanityBlogPage}  />
             <BlogProjectsList blog={data.allSanityBlogPage} categories={data.allSanityBlogCategories} />
+            <BlogListWork projects={data.allSanityProjectPage} />
         </Contenedor>
         
     </Layout>

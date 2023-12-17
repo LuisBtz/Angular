@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { Link } from 'gatsby';
 
 const BlogItemGridList = ({project}) => {
 
@@ -17,7 +16,7 @@ const iconGetDataImageAlt = project.featuredImage && project.featuredImage.alt
                 <div></div>
                 <div></div>
             </div>
-            <Link to={`work/${project.slug.current}`}>
+            <a href={`${project.link}`} target='_blank' rel="noreferrer">
                 <div className="image">
                     <GatsbyImage
                         style={{ height: "100%", width: "100%" }}
@@ -33,7 +32,7 @@ const iconGetDataImageAlt = project.featuredImage && project.featuredImage.alt
                 </div>
                 
                 
-            </Link>
+            </a>
         </div>
 
     </WorkItemListContainer>

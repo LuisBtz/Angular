@@ -17,11 +17,11 @@ const BlogProjectsList = ({categories, blog}) => {
             <div className='container'>
                 <div className='nav'>
                     <ul className='list'>
-                        <li className='first'><Link to='/work'><span>></span>See All</Link></li>
+                        <li className='first'><Link to='/insights#projectList'><span>></span>See All</Link></li>
                         {categories.nodes.map((category) => {
                             return (
                                 <li className='item' key={category._id}>
-                                    <Link to={`/category/${category.slug.current}`}>
+                                    <Link to={`/blogCategory/${category.slug.current}#projectList`}>
                                         {category.title}
                                     </Link>
                                 </li>

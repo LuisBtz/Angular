@@ -22,7 +22,7 @@ const TemplateProjectsList = ({categories, projects, category}) => {
                         {categories.nodes.map((category) => {
 
                             return (
-                                <li className={categorySlug == category.slug.current ? 'item active' : 'item'} key={category._id}>
+                                <li className={categorySlug === category.slug.current ? 'item active' : 'item'} key={category._id}>
                                     <Link to={`/category/${category.slug.current}`}>
                                         {category.title}
                                     </Link>
@@ -31,7 +31,7 @@ const TemplateProjectsList = ({categories, projects, category}) => {
                         })}
                     </ul>
                     <ul className='buttons'>
-                        <li><button onClick={() => (setGrid(false), setList(true))}  className={list ? 'active' : ''}><span>></span>List View</button></li>
+                        <li><button onClick={() => (setGrid(false),  setList(true))}  className={list ? 'active' : ''}><span>></span>List View</button></li>
                         <li><button onClick={() => (setGrid(true), setList(false))}  className={grid ? 'active' : ''}><span>></span>Grid View</button></li>
                     </ul>
                 </div>
