@@ -1,10 +1,10 @@
 import { Link } from 'gatsby';
 import React, { useState } from "react"
 import styled from 'styled-components';
-import TemplateItemList from './TemplateItemList';
-import TemplateItemGridList from './TemplateItemGridList';
+import BlogItemList from './BlogItemList';
+import BlogItemGridList from './BlogItemGridList';
 
-const TemplateProjectsList = ({categories, projects, category}) => {
+const BlogProjectsListTemplate = ({categories, blog, category }) => {
 
 
     const [list, setList] = useState(true);
@@ -13,18 +13,17 @@ const TemplateProjectsList = ({categories, projects, category}) => {
 
     const categorySlug = category.slug.current;
 
-    
+
     return(
         <WorkProjectsListContainer id='projectList'>
             <div className='container'>
                 <div className='nav'>
                     <ul className='list'>
-                        <li className='first'><Link to='/work'><span>></span>See All</Link></li>
+                        <li><Link to='/insights#projectList'><span>></span>See All</Link></li>
                         {categories.nodes.map((category) => {
-
                             return (
-                                <li className={categorySlug === category.slug.current ? 'item active' : 'item'} key={category._id}>
-                                    <Link to={`/category/${category.slug.current}`}>
+                                <li className={categorySlug === category.slug.current ? 'item active' : 'item'}  key={category._id}>
+                                    <Link to={`/blogCategory/${category.slug.current}#projectList`}>
                                         {category.title}
                                     </Link>
                                 </li>
@@ -32,7 +31,7 @@ const TemplateProjectsList = ({categories, projects, category}) => {
                         })}
                     </ul>
                     <ul className='buttons'>
-                        <li><button onClick={() => (setGrid(false),  setList(true))}  className={list ? 'active' : ''}><span>></span>List View</button></li>
+                        <li><button onClick={() => (setGrid(false), setList(true))}  className={list ? 'active' : ''}><span>></span>List View</button></li>
                         <li><button onClick={() => (setGrid(true), setList(false))}  className={grid ? 'active' : ''}><span>></span>Grid View</button></li>
                     </ul>
                 </div>
@@ -40,18 +39,18 @@ const TemplateProjectsList = ({categories, projects, category}) => {
                     {
                         list ?
                             <ul className='list'>
-                                    {projects.nodes.map((project) => {
+                                    {blog.nodes.map((project) => {
                                 
                                 return (
-                                    <TemplateItemList project={project} />
+                                    <BlogItemList project={project} />
                                 )
                                 })}
                             </ul>
                             :
                             <ul className='grid'>
-                                {projects.nodes.map((project) => {
+                                {blog.nodes.map((project) => {
                                     return (
-                                        <TemplateItemGridList project={project} />
+                                        <BlogItemGridList project={project} />
                                     )
                                 })}
                             </ul>
@@ -85,7 +84,6 @@ const WorkProjectsListContainer = styled.section`
             }
             ul.list {
                 display: inline;
-                
                 .item.active {
                     background-color: var(--gray);
                     color: var(--white);
@@ -124,6 +122,7 @@ const WorkProjectsListContainer = styled.section`
         .projectsList {
             padding: 50px 0;
             position: relative;
+            color: var(--black);
             .list {
                 min-height: 300px;
                 @media (max-width: 900px) {
@@ -143,4 +142,4 @@ const WorkProjectsListContainer = styled.section`
     }
 `
 
-export default TemplateProjectsList
+export default BlogProjectsListTemplate

@@ -32,6 +32,38 @@ async function turnCategoryPages({ graphql, actions }) {
   });
 }
 
+async function turnBlogCategoryPages({ graphql, actions }) {
+  // 1. Get a template for this page
+  const blogCategoryTemplate = path.resolve('./src/templates/BlogCategory.js')
+  // 2. Query all artists
+  const { data } = await graphql(`
+      query {
+          blogCategories: allSanityBlogCategories {
+            nodes {
+                title
+                id
+                slug {
+                    current
+                }
+            }
+          }
+      }
+  `);
+  // 3. Loop over each artist and create a page for each artist
+  data.blogCategories.nodes.forEach((blogCategory) => {
+    actions.createPage({
+      // url forths new page
+      path: `/blogCategory/${blogCategory.slug.current}`,
+      component: blogCategoryTemplate,
+      context: {
+        language: 'es',
+        slug: blogCategory.slug.current,
+      },
+      ownerNodeId: blogCategory.id,
+    })
+  });
+}
+
 
 
 
@@ -75,6 +107,7 @@ exports.createPages = async (params) => {
     await Promise.all([
       // 1. Artists
       turnCategoryPages(params),
+      turnBlogCategoryPages(params),
       turnProjectPages(params),
   
     ])
