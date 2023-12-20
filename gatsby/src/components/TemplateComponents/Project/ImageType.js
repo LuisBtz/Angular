@@ -7,7 +7,7 @@ const ImageType = ({data}) => {
     const bgGetDataImageAlt = data.alt
 
     return(
-        <ImageTypeContainer className='item'>
+        <ImageTypeContainer className='item' data-aos="fade-down" data-aos-delay="500" data-aos-duration="500">
             <div className='image'>
                 <GatsbyImage
                     image={bgGetDataImage}

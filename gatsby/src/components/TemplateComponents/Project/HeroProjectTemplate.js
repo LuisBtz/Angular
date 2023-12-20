@@ -12,8 +12,8 @@ const HeroProjectTemplate = ({project}) => {
     
 
     return(
-        <HeroProjectTemplateContainer>
-            <div className='featuredImage'>
+        <HeroProjectTemplateContainer >
+            <div className='featuredImage' data-aos="fade-down" data-aos-delay="500" data-aos-duration="500">
                 <div className="image">
                     <GatsbyImage
                         style={{ height: "100%", width: "100%" }}
@@ -22,7 +22,7 @@ const HeroProjectTemplate = ({project}) => {
                     />
                 </div> 
             </div>
-            <div className='container'>
+            <div className='container' data-aos="fade-down" data-aos-delay="500" data-aos-duration="500">
                 <div className='top'>
                     <h1>{project.title}</h1>
                     <Link className='category' to={`/category/${project.categories[0].slug.current}`}><p><span>></span>{project.categories[0].title}</p></Link>

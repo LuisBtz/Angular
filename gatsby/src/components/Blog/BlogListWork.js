@@ -10,9 +10,9 @@ const BlogListWork = ({projects}) => {
 
 
     return (
-        <ProjectsListContainer>
+        <ProjectsListContainer >
             <div className='contenedor'>
-                <div className='top'>
+                <div className='top' data-aos="fade-down" data-aos-delay="500" data-aos-duration="500">
                     <div className='iz'>
                         <p><span>></span>Latest Publications</p>
                     </div>
@@ -26,7 +26,7 @@ const BlogListWork = ({projects}) => {
                         const iconGetDataImageAlt = project.featuredImage && project.featuredImage.alt
                         
                         return (
-                            <div className='item' key={project._id}>
+                            <div className='item' key={project._id} data-aos="fade-down" data-aos-delay="500" data-aos-duration="500">
                                 <div className='esquinas'>
                                     <div></div>
                                     <div></div>

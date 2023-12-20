@@ -6,7 +6,7 @@ import { Link } from 'gatsby';
 
 const FeaturedItemTemplate = ({projects}) => {
     return(
-        <FeaturedItemContainer>
+        <FeaturedItemContainer data-aos="fade-down" data-aos-delay="500" data-aos-duration="500">
             <div className='top'>
                 <h2>Featured Work</h2>
                 <Link to='/work' ><span>></span> See All Work</Link>
@@ -17,7 +17,7 @@ const FeaturedItemTemplate = ({projects}) => {
                 
                   return (
                       <div className='firstItem' key={project._id}>
-                        <Link to={`work/${project.slug.current}`}>
+                        <Link to={`/work/${project.slug.current}`}>
                             <div className='texto'>
                                 <p className='title'><span>></span>{project.title}</p>
                                 <h3 className='tagline'>{project.tagline}</h3>

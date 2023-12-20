@@ -6,16 +6,16 @@ const TheTeam = ({about}) => {
     return(
         <TheTeamContainer>
             <div className='container'>
-                <div className='top'>
+                <div className='top' data-aos="fade-down" data-aos-delay="500" data-aos-duration="500">
                     <h2>The Team</h2>
                 </div>
-                <p className='desc'>{about.teamDescription}</p>
+                <p className='desc' data-aos="fade-down" data-aos-delay="500" data-aos-duration="500">{about.teamDescription}</p>
                 <ul className='services'>
                     {about.team.map((member) => {
                         const iconGetDataImage = getImage(member.image && member.image.asset)
                         const iconGetDataImageAlt = member.image && member.image.alt                        
                         return (
-                            <li className={`${member.empty} item`} key={member._kay}>
+                            <li className={`${member.empty} item`} key={member._kay} data-aos="fade-down" data-aos-delay="500" data-aos-duration="500">
                                 <div className='esquinas'>
                                     <div></div>
                                     <div></div>

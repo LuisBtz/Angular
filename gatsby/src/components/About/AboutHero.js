@@ -3,10 +3,10 @@ import styled from 'styled-components';
 
 const AboutHero = ({about}) => {
     return(
-        <AboutHeroContainer>
+        <AboutHeroContainer >
             <div className='container'>
-                <h1>{about.mainText}</h1>
-                <div className='description'>
+                <h1 data-aos="fade-down" data-aos-delay="500" data-aos-duration="500">{about.mainText}</h1>
+                <div className='description' data-aos="fade-down" data-aos-delay="500" data-aos-duration="500">
                     <h2>{about.description}</h2>
                 </div>
             </div>

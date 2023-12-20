@@ -6,7 +6,7 @@ import { Link } from 'gatsby';
 
 const LastItem = ({projects}) => {
     return(
-        <LastItemContainer>
+        <LastItemContainer data-aos="fade-down" data-aos-delay="500" data-aos-duration="500">
             {projects.nodes.map((project) => {
                   const iconGetDataImage = getImage(project.featuredImage && project.featuredImage.asset)
                   const iconGetDataImageAlt = project.featuredImage && project.featuredImage.alt

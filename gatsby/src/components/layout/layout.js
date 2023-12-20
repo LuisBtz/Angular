@@ -1,15 +1,25 @@
-import React from "react";
+import React,{useEffect} from "react"
 import { Normalizer } from "../styles/Normalizer"
 import { Typography } from "../styles/Typography"
 import Header from "./header"
 import Footer from "./footer";
 import styled from "styled-components";
+import AOS from "aos";
+import 'aos/dist/aos.css';
+
 
 
 
 
 function Layout({ children, gray, white  }) {
 
+
+  useEffect(()=>{
+    AOS.init({
+      once: true
+    })
+    
+  })
 
 
   return (

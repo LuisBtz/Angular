@@ -10,7 +10,7 @@ const Insights = ({blog}) => {
     
     return(
         <InsightsContainer>
-            <div className='contenedor'>
+            <div className='contenedor' data-aos="fade-down" data-aos-delay="500" data-aos-duration="500">
 
                 <div className='top'>
                     <h2>Insights</h2>

@@ -9,7 +9,7 @@ const OurApproach = ({about}) => {
     return(
         <OurApproachContainer>
             <div className='container'>
-                <div className='top'>
+                <div className='top' data-aos="fade-down" data-aos-delay="500" data-aos-duration="500">
                     <h2>Our Approach</h2>
                     <Link to='/work'><span>></span>See All Work</Link>
                 </div>
@@ -19,7 +19,7 @@ const OurApproach = ({about}) => {
                         const iconGetDataImageAlt = approach.image && approach.image.alt
                         
                         return (
-                            <li className='item' key={approach._kay}>
+                            <li className='item' key={approach._kay} data-aos="fade-down" data-aos-delay="500" data-aos-duration="500">
                                 <div className="image">
                                     <div className='esquinas'>
                                         <div></div>

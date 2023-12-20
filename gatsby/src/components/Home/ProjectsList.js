@@ -8,7 +8,7 @@ const ProjectsList = ({projects}) => {
 
 
     return (
-        <ProjectsListContainer>
+        <ProjectsListContainer data-aos="fade-down" data-aos-delay="500" data-aos-duration="500">
             <div className='contenedor'>
                 {projects.nodes.map((project) => {
                     const iconGetDataImage = getImage(project.featuredImage && project.featuredImage.asset)

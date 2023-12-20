@@ -9,7 +9,7 @@ const iconGetDataImageAlt = project.featuredImage && project.featuredImage.alt
 
     return(
     <WorkItemListContainer>
-        <div className='contenedor'>
+        <div className='contenedor' >
 
             <a rel="noreferrer" target='_blank' href={`${project.link}`}>
                 <div className='item'>

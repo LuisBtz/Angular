@@ -6,7 +6,7 @@ import { Link } from 'gatsby';
 
 const FeaturedItem = ({projects}) => {
     return(
-        <FeaturedItemContainer>
+        <FeaturedItemContainer data-aos="fade-down" data-aos-delay="500" data-aos-duration="500">
             <div className='top'>
                 <h2>Featured Work</h2>
                 <Link to='/work' ><span>></span> See All Work</Link>

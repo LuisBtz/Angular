@@ -13,12 +13,12 @@ const HeroBlog = ({blog}) => {
                 
                   return (
                       <div className='firstItem' key={project._id}>
-                            <div className='texto'>
+                            <div className='texto' data-aos="fade-down" data-aos-delay="500" data-aos-duration="500">
                                 <p className='title'><span>></span>{project.author.title}</p>
                                 <h3 className='tagline'><Link to={`/blogCategory/${project.category.slug.current}`}><span>></span>{project.category.title}</Link></h3>
                                 <div className='link'><p>{project.date}</p></div>
                             </div>
-                            <div className='top'>
+                            <div className='top' data-aos="fade-down" data-aos-delay="500" data-aos-duration="500">
                                 <h1>{project.title}</h1>
                                 <div className='desc'>
                                     <div className='text'>
@@ -29,7 +29,7 @@ const HeroBlog = ({blog}) => {
                                     <a href={project.link} target='_blank' rel="noreferrer" >Continue Reading</a>
                                 </div>
                             </div>
-                            <div className="image">
+                            <div className="image" data-aos="fade-down" data-aos-delay="500" data-aos-duration="500">
                                 <GatsbyImage
                                     style={{ height: "100%", width: "100%" }}
                                     image={iconGetDataImage}

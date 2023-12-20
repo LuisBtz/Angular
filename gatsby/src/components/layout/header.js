@@ -32,13 +32,14 @@ const Header = ({gray, white}) => {
 
     return(
         <HeaderContainer>
-            <Link to='/'>
+            <Link to='/'  >
                 <div
+                    data-aos="fade-down" data-aos-delay="0" data-aos-duration="800" 
                     className={gray === true ? 'logo gray' : white === true ? 'logo white' : 'logo'}
                     dangerouslySetInnerHTML={{__html: data.sanityGlobalPage.logoSVGCode}}
                 />
             </Link>
-            <div className={white ? 'text white' : 'text'}>
+            <div className={white ? 'text white' : 'text'}  data-aos="fade-down" data-aos-delay="0" data-aos-duration="800" >
                 <div className='iz'>
                     <p>{data.sanityGlobalPage.tagline}</p>
                 </div>
@@ -52,9 +53,9 @@ const Header = ({gray, white}) => {
                         <li>
                             <Link to='/'><img src={data.sanityGlobalPage.angularIcon.asset.url} alt={data.sanityGlobalPage.angularIcon.alt} /></Link>
                         </li>
-                        <li><Link to='/work'>Work</Link></li>
-                        <li><Link to='/about'>About</Link></li>
-                        <li><Link to='/insights'>Insights</Link></li>
+                        <li className='greenLink'><Link to='/work'>Work</Link></li>
+                        <li className='yellowLink'><Link to='/about'>About</Link></li>
+                        <li className='blueLink'><Link to='/insights'>Insights</Link></li>
                     </ul>
                     <ul className='social'>
                         {data.sanityGlobalPage.socialMediaLinks.map((item) => {                    
@@ -71,7 +72,7 @@ const Header = ({gray, white}) => {
                     </ul>
                     <ul className='policy'>
                         <li><Link to='/'>Privacy Policy</Link></li>
-                        <li>Design & Developed By Nevada Projects </li>
+                        {/* <li>Design & Developed By Nevada Projects </li> */}
                     </ul>
                 </div>
             </nav>
@@ -93,13 +94,10 @@ const HeaderContainer = styled.header`
                     margin-top: -20px;
                 }
             p {
-                font-size: 1rem;
-                @media (max-width: 800px) {
-                    font-size: 0.8rem;
-                }
+                font-size: 0.6rem;
             }
             .iz {
-                width: 165px;
+                width: 125px;
             }
         }
         .text.white {

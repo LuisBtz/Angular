@@ -42,7 +42,7 @@ const Footer = () => {
                                 <p className='dark'>{data.sanityGlobalPage.tagline}</p>
                             </div>
                             <div className='bottom'>
-                                <p className='dark small'>Design & Developed By Nevada Projects </p>
+                                <a className='dark small' href='https://nevadaprojects.com/' target='_blank' rel="noreferrer">Design & Developed By Nevada Projects </a>
                             </div>
                         </div>
                     </div>
@@ -50,9 +50,9 @@ const Footer = () => {
                 <div className='de'>
                     <div className='le'>
                         <ul>
-                            <li><Link to="/work" >Work</Link></li>
-                            <li><Link to="/insights" >Insights</Link></li>
-                            <li><Link to="/about" >About</Link></li>
+                            <li className='redLink'><Link to="/work" >Work</Link></li>
+                            <li className='pinkLink'><Link to="/insights" >Insights</Link></li>
+                            <li className='greenLink'><Link to="/about" >About</Link></li>
                         </ul>
                     </div>
                     <div className='ri'>

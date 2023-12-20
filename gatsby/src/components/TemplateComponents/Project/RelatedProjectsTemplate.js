@@ -26,7 +26,7 @@ const RelatedProjectsTemplate = ({project}) => {
                                 <div></div>
                                 <div></div>
                             </div>
-                            <Link to={`work/${project.slug.current}`}>
+                            <Link to={`/work/${project.slug.current}`}>
                                 <div className="image">
                                     <GatsbyImage
                                         style={{ height: "100%", width: "100%" }}

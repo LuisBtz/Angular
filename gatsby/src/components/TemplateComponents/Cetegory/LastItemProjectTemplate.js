@@ -6,14 +6,14 @@ import { Link } from 'gatsby';
 
 const LastItemProjectTemplate = ({projects}) => {
     return(
-        <LastItemContainer>
+        <LastItemContainer data-aos="fade-down" data-aos-delay="500" data-aos-duration="500">
             {projects.nodes.map((project) => {
                   const iconGetDataImage = getImage(project.featuredImage && project.featuredImage.asset)
                   const iconGetDataImageAlt = project.featuredImage && project.featuredImage.alt
                 
                   return (
                       <div className='lastItem' key={project._id}>
-                        <Link to={`work/${project.slug.current}`}>
+                        <Link to={`/work/${project.slug.current}`}>
                             <div className='texto'>
                                 <div className='arriba'>
                                     <p><span>></span>{project.title}</p>

@@ -8,7 +8,7 @@ const BlogItemGridList = ({project}) => {
 const iconGetDataImageAlt = project.featuredImage && project.featuredImage.alt
 
     return(
-    <WorkItemListContainer>
+    <WorkItemListContainer >
         <div className='item' key={project._id}>
             <div className='esquinas'>
                 <div></div>

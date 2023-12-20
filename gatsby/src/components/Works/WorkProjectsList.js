@@ -13,7 +13,7 @@ const WorkProjectsList = ({categories, projects}) => {
 
 
     return(
-        <WorkProjectsListContainer id='projectList'>
+        <WorkProjectsListContainer id='projectList' data-aos="fade-down" data-aos-delay="500" data-aos-duration="500">
             <div className='container'>
                 <div className='nav'>
                     <ul className='list'>

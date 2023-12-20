@@ -5,7 +5,7 @@ import BlockContent from '@sanity/block-content-to-react';
 
 const TextType = ({data}) => {
     return(
-        <TextTypeContainer className='item'>
+        <TextTypeContainer className='item' data-aos="fade-down" data-aos-delay="500" data-aos-duration="500">
             <div className='texto'>
                 <BlockContent
                     blocks={data._rawText}

@@ -4,16 +4,16 @@ import styled from 'styled-components';
 
 const OurServices = ({about}) => {
     return(
-        <OurServicesContainer>
+        <OurServicesContainer >
             <div className='container'>
-                <div className='top'>
+                <div className='top' data-aos="fade-down" data-aos-delay="500" data-aos-duration="500">
                     <h2>Our Services</h2>
                     <Link to='/work'><span>></span>See All Work</Link>
                 </div>
                 <ul className='services'>
                     {about.services.map((service) => {
                         return (
-                            <li className={`${service.empty} item`} key={service._kay}>
+                            <li className={`${service.empty} item`} key={service._kay} data-aos="fade-down" data-aos-delay="500" data-aos-duration="500">
                                 <div className='esquinas'>
                                     <div></div>
                                     <div></div>
@@ -26,7 +26,7 @@ const OurServices = ({about}) => {
                         )
                     })}
                 </ul>
-                <div className='texto'>
+                <div className='texto' data-aos="fade-down" data-aos-delay="500" data-aos-duration="500">
                     <h2>{about.ourServicesDescription}</h2>
                 </div>
             </div>

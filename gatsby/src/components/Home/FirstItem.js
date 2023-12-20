@@ -12,7 +12,7 @@ const FirstItem = ({projects}) => {
                   const iconGetDataImageAlt = project.featuredImage && project.featuredImage.alt
                 
                   return (
-                      <div className='firstItem' key={project._id}>
+                      <div className='firstItem' key={project._id} data-aos="fade-down" data-aos-delay="500" data-aos-duration="500" >
                         <Link to={`work/${project.slug.current}`}>
                             <div className="image">
                                 <GatsbyImage
@@ -52,6 +52,14 @@ const FirstItemContainer = styled.section`
         left: 50%;
         top: 50px;
         transform: translateX(-50%);
+        @media (max-width: 720px) {
+            padding: 0 50px;
+            
+        }
+        @media (max-width: 650px) {
+            padding: 0 30px;
+            
+        }
         p {
             span {
                 margin-right: 30px;
@@ -59,6 +67,12 @@ const FirstItemContainer = styled.section`
         }
         h1 {
             width: 700px;
+            @media (max-width: 720px) {
+                width: 400px; 
+            }
+            @media (max-width: 650px) {
+                font-size: 2rem;
+            }
         }
     }
     .esquinas {
@@ -78,24 +92,36 @@ const FirstItemContainer = styled.section`
                 left: 50px;
                 border-top: solid 1px var(--white);
                 border-left: solid 1px var(--white);
+                @media (max-width: 650px) {
+                    left: 20px;
+                }
             }
             &:nth-child(2) {
                 top: 20px;
                 right: 50px;
                 border-top: solid 1px var(--white);
                 border-right: solid 1px var(--white);
+                @media (max-width: 650px) {
+                    right: 20px;
+                }
             }
             &:nth-child(3) {
                 bottom: 20px;
                 left: 50px;
                 border-bottom: solid 1px var(--white);
                 border-left: solid 1px var(--white);
+                @media (max-width: 650px) {
+                    left: 20px;
+                }
             }
             &:nth-child(4) {
                 bottom: 20px;
                 right: 50px;
                 border-bottom: solid 1px var(--white);
                 border-right: solid 1px var(--white);
+                @media (max-width: 650px) {
+                    right: 20px;
+                }
             }
         }
     }

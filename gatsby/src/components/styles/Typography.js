@@ -104,5 +104,51 @@ html {
     h3 {
         font-family: var(--light);
     }
+
+    .redLink {
+        a {
+            &:hover {
+                display: inline-block;
+                color: var(--red);
+            }
+        }
+    }
+    .greenLink {
+        a {
+            &:hover {
+                display: inline-block;
+                color: var(--green);
+            }
+        }
+    }
+    .yellowLink {
+        a {
+            &:hover {
+                display: inline-block;
+                color: var(--yellow);
+            }
+        }
+    }
+    .blueLink {
+        a {
+            &:hover {
+                display: inline-block;
+                color: var(--blue);
+            }
+        }
+    }
+    .pinkLink {
+        a {
+            &:hover {
+                display: inline-block;
+                color: var(--pink);
+            }
+        }
+    }
+
+    ::selection {
+        background: var(--blue);
+        color: var(--black);
+    }
     
 `

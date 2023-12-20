@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const TextHero = ({description}) => {
     return(
-        <TextHeroContainer>
+        <TextHeroContainer data-aos="fade-down" data-aos-delay="500" data-aos-duration="500">
             <h2>{description}</h2>
         </TextHeroContainer>
     )

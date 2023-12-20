@@ -5,7 +5,7 @@ import BlockContent from '@sanity/block-content-to-react';
 
 const Hero2Blog = ({blog}) => {
     return(
-        <LastItemContainer>
+        <LastItemContainer data-aos="fade-down" data-aos-delay="500" data-aos-duration="500">
             {blog.nodes.map((project) => {
                   const iconGetDataImage = getImage(project.featuredImage && project.featuredImage.asset)
                   const iconGetDataImageAlt = project.featuredImage && project.featuredImage.alt
