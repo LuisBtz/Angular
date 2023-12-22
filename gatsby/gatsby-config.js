@@ -30,5 +30,17 @@ module.exports = {
       "path": "./src/assets/images/"
     },
     __key: "images"
-  }]
+  },
+  {
+    resolve: "gatsby-plugin-mailchimp",
+    options: {
+      endpoint:
+        "https://angular.us14.list-manage.com/subscribe/post?u=fbce6b8aeb51b3bdf3ddde008&amp;id=4e9ac4963b&amp;f_id=00e1bee0f0", // string; add your MC list endpoint here; see instructions below
+      timeout: 3500, // number; the amount of time, in milliseconds, that you want to allow mailchimp to respond to your request before timing out. defaults to 3500
+    },
+  },
+]
 };
+
+
+
