@@ -63,6 +63,9 @@ const ProjectsListContainer = styled.section`
         @media (max-width: 750px) {
             grid-template-columns: repeat(2, 1fr);
         }
+        @media (max-width: 450px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
         .item {
             width: 100%;
             padding: 10px;

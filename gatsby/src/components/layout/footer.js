@@ -85,6 +85,9 @@ const FooterContainer = styled.footer`
         color: var(--white);
         display: grid;
         grid-template-columns: repeat(5, 1fr);
+        @media (max-width: 750px) {
+            padding-bottom: 200px;
+        }
         .iz {
             grid-column: 1/3;
             padding-right: 30px;
@@ -116,6 +119,9 @@ const FooterContainer = styled.footer`
                 margin-top: 50px;
                 grid-column: 1/6;
             }
+            @media (max-width: 500px) {
+                flex-direction: column;
+            }
             .le {
                 margin-right: 50px;
                 ul {
@@ -135,11 +141,15 @@ const FooterContainer = styled.footer`
                 }
             }
             .ri {
+                @media (max-width: 500px) {
+                        margin-top: 50px;
+                    }
                 ul {
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
                     height: 100%;
+                    
                     li {
                         a {
                             font-family: var(--light);

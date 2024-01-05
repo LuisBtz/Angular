@@ -30,6 +30,12 @@ const AboutHeroContainer = styled.section`
                 font-size: 4rem;
                 margin: 40px auto;
             }
+            @media (max-width: 550px) {
+                font-size: 3rem;
+            }
+            @media (max-width: 400px) {
+                font-size: 2rem;
+            }
         }
         .description {
             padding: 20px;

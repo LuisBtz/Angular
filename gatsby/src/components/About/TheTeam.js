@@ -101,6 +101,11 @@ const TheTeamContainer = styled.section`
             @media (max-width: 550px){
                 grid-template-columns: repeat(1, 1fr);
             }
+            li.true {
+                @media (max-width: 550px) {
+                    height: 300px;
+                }
+            }
             li {
                 padding: 10px;
                 position: relative;

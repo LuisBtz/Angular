@@ -58,8 +58,11 @@ const ProjectsListContainer = styled.section`
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         grid-gap:45px;
-        @media (max-width: 750px) {
+        @media (max-width: 930px) {
             grid-template-columns: repeat(2, 1fr);
+        }
+        @media (max-width: 450px) {
+            grid-template-columns: repeat(1, 1fr);
         }
         .item {
             width: 100%;
